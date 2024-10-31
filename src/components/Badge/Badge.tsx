@@ -1,5 +1,15 @@
 import './Badge.css';
 
-export default function Badge({ shape = 'square', color = 'gray' }) {
-    return <div className={`badge ${shape} ${color}`}>Badge</div>;
+interface Props {
+    shape: string;
+    color: string;
+    children: string;
+}
+
+export default function Badge({
+    shape = 'square',
+    color = 'gray',
+    children,
+}: Props) {
+    return <div className={`badge ${shape} ${color}`}>{children}</div>;
 }
